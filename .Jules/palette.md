@@ -1,0 +1,1 @@
+## 2024-05-17 - Improved CLI inputs and outputs\n**Learning:** CLI applications benefit greatly from simple UX improvements like spacing out prompts and clear result labels.\n**Action:** Add spaces after prompts and use clear labels for output to improve readability.
