@@ -7,16 +7,18 @@ float media;
 
 int main()
 {
-  printf("Digite a nota 1: ");
+  printf("--- Calculadora de Média ---\n\n");
+
+  printf("Digite a nota 1 (0 a 10): ");
   if (scanf("%f", &nota_1) != 1) return 1;
 
-  printf("Digite a nota 2: ");
+  printf("Digite a nota 2 (0 a 10): ");
   if (scanf("%f", &nota_2) != 1) return 1;
   
-  printf("Digite a nota 3: ");
+  printf("Digite a nota 3 (0 a 10): ");
   if (scanf("%f", &nota_3) != 1) return 1;
 
-  printf("Digite a nota 4: ");
+  printf("Digite a nota 4 (0 a 10): ");
   if (scanf("%f", &nota_4) != 1) return 1;
   
   media = ((nota_1 + nota_2 + nota_3 + nota_4) / 4);
