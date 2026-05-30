@@ -5,19 +5,37 @@
 float nota_1, nota_2, nota_3, nota_4;
 float media;
 
+float ler_nota(int num_nota) {
+  float nota;
+  while (true) {
+    printf("Digite a nota %d: ", num_nota);
+    int scan_result = scanf("%f", &nota);
+    if (scan_result == 1) {
+      return nota;
+    } else if (scan_result == EOF) {
+      printf("\nFim de arquivo detectado. Saindo.\n");
+      exit(1);
+    } else {
+      printf("Entrada invalida. Por favor, digite um numero.\n");
+      // Clear the input buffer
+      int ch;
+      while ((ch = getchar()) != '\n' && ch != EOF);
+      if (ch == EOF) {
+        printf("\nFim de arquivo detectado. Saindo.\n");
+        exit(1);
+      }
+    }
+  }
+}
+
 int main()
 {
-  printf("Digite a nota 1: ");
-  if (scanf("%f", &nota_1) != 1) return 1;
+  printf("--- Calculadora de Media ---\n\n");
 
-  printf("Digite a nota 2: ");
-  if (scanf("%f", &nota_2) != 1) return 1;
-  
-  printf("Digite a nota 3: ");
-  if (scanf("%f", &nota_3) != 1) return 1;
-
-  printf("Digite a nota 4: ");
-  if (scanf("%f", &nota_4) != 1) return 1;
+  nota_1 = ler_nota(1);
+  nota_2 = ler_nota(2);
+  nota_3 = ler_nota(3);
+  nota_4 = ler_nota(4);
   
   media = ((nota_1 + nota_2 + nota_3 + nota_4) / 4);
   printf("\nMédia final: %.2f", media);
