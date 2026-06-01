@@ -7,6 +7,7 @@ float media;
 
 int main()
 {
+  printf("=== Calculadora de Média ===\n\n");
   printf("Digite a nota 1: ");
   if (scanf("%f", &nota_1) != 1) return 1;
 
@@ -24,11 +25,11 @@ int main()
   
   if(media >= 7)
   {
-    printf("\n\nAprovado(a)!\n\n");
+    printf("\n\n\033[1;32mAprovado(a)!\033[0m\n\n");
   }
   else
   {
-    printf("\n\nReprovado(a)!\n\n");
+    printf("\n\n\033[1;31mReprovado(a)!\033[0m\n\n");
   }
 
   return 0;
