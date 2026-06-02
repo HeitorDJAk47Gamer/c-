@@ -25,11 +25,11 @@ int main()
   
   if(media >= 7)
   {
-    printf("\n\n\033[1;32mAprovado(a)!\033[0m\n\n");
+    printf("\n\n\033[1;32m✓ Aprovado(a)!\033[0m\n\n");
   }
   else
   {
-    printf("\n\n\033[1;31mReprovado(a)!\033[0m\n\n");
+    printf("\n\n\033[1;31m✗ Reprovado(a)!\033[0m\n\n");
   }
 
   return 0;
