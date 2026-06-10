@@ -5,20 +5,28 @@
 float nota_1, nota_2, nota_3, nota_4;
 float media;
 
+int ler_nota(float *nota) {
+  if (scanf("%f", nota) != 1) {
+    printf("\033[1;31mErro: Entrada inválida. Por favor, digite um número.\033[0m\n");
+    return 0;
+  }
+  return 1;
+}
+
 int main()
 {
   printf("=== Calculadora de Média ===\n\n");
   printf("Digite a nota 1: ");
-  if (scanf("%f", &nota_1) != 1) return 1;
+  if (!ler_nota(&nota_1)) return 1;
 
   printf("Digite a nota 2: ");
-  if (scanf("%f", &nota_2) != 1) return 1;
+  if (!ler_nota(&nota_2)) return 1;
   
   printf("Digite a nota 3: ");
-  if (scanf("%f", &nota_3) != 1) return 1;
+  if (!ler_nota(&nota_3)) return 1;
 
   printf("Digite a nota 4: ");
-  if (scanf("%f", &nota_4) != 1) return 1;
+  if (!ler_nota(&nota_4)) return 1;
   
   media = ((nota_1 + nota_2 + nota_3 + nota_4) / 4);
   printf("\nMédia final: %.2f", media);
