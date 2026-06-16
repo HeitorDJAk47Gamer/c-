@@ -8,17 +8,22 @@ float media;
 int main()
 {
   printf("=== Calculadora de Média ===\n\n");
-  printf("Digite a nota 1: ");
-  if (scanf("%f", &nota_1) != 1) return 1;
+  char buffer[256];
+  float* notas[] = {&nota_1, &nota_2, &nota_3, &nota_4};
 
-  printf("Digite a nota 2: ");
-  if (scanf("%f", &nota_2) != 1) return 1;
-  
-  printf("Digite a nota 3: ");
-  if (scanf("%f", &nota_3) != 1) return 1;
-
-  printf("Digite a nota 4: ");
-  if (scanf("%f", &nota_4) != 1) return 1;
+  for (int i = 0; i < 4; i++) {
+    while (1) {
+      printf("Digite a nota %d: ", i + 1);
+      if (fgets(buffer, sizeof(buffer), stdin) == NULL) {
+        printf("\n\033[1;31mFim de entrada detectado. Saindo...\033[0m\n");
+        return 1;
+      }
+      if (sscanf(buffer, "%f", notas[i]) == 1) {
+        break;
+      }
+      printf("\033[1;31mEntrada inválida! Por favor, digite um número válido.\033[0m\n");
+    }
+  }
   
   media = ((nota_1 + nota_2 + nota_3 + nota_4) / 4);
   printf("\nMédia final: %.2f", media);
