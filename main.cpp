@@ -8,17 +8,35 @@ float media;
 int main()
 {
   printf("=== Calculadora de Média ===\n\n");
-  printf("Digite a nota 1: ");
-  if (scanf("%f", &nota_1) != 1) return 1;
+  char buffer[100];
 
-  printf("Digite a nota 2: ");
-  if (scanf("%f", &nota_2) != 1) return 1;
+  while (true) {
+    printf("Digite a nota 1: ");
+    if (fgets(buffer, sizeof(buffer), stdin) == NULL) return 1;
+    if (sscanf(buffer, "%f", &nota_1) == 1) break;
+    printf("\033[1;31mEntrada inválida. Por favor, digite um número.\033[0m\n");
+  }
+
+  while (true) {
+    printf("Digite a nota 2: ");
+    if (fgets(buffer, sizeof(buffer), stdin) == NULL) return 1;
+    if (sscanf(buffer, "%f", &nota_2) == 1) break;
+    printf("\033[1;31mEntrada inválida. Por favor, digite um número.\033[0m\n");
+  }
   
-  printf("Digite a nota 3: ");
-  if (scanf("%f", &nota_3) != 1) return 1;
+  while (true) {
+    printf("Digite a nota 3: ");
+    if (fgets(buffer, sizeof(buffer), stdin) == NULL) return 1;
+    if (sscanf(buffer, "%f", &nota_3) == 1) break;
+    printf("\033[1;31mEntrada inválida. Por favor, digite um número.\033[0m\n");
+  }
 
-  printf("Digite a nota 4: ");
-  if (scanf("%f", &nota_4) != 1) return 1;
+  while (true) {
+    printf("Digite a nota 4: ");
+    if (fgets(buffer, sizeof(buffer), stdin) == NULL) return 1;
+    if (sscanf(buffer, "%f", &nota_4) == 1) break;
+    printf("\033[1;31mEntrada inválida. Por favor, digite um número.\033[0m\n");
+  }
   
   media = ((nota_1 + nota_2 + nota_3 + nota_4) / 4);
   printf("\nMédia final: %.2f", media);
