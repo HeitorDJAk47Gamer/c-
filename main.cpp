@@ -1,6 +1,7 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include<math.h>
+#include<string.h>
 
 float nota_1, nota_2, nota_3, nota_4;
 float media;
@@ -14,6 +15,13 @@ float ler_nota(int num) {
             printf("\n\033[1;31mErro na leitura. Saindo...\033[0m\n");
             exit(1);
         }
+
+        for (int i = 0; linha[i] != '\0'; i++) {
+            if (linha[i] == ',') {
+                linha[i] = '.';
+            }
+        }
+
         if (sscanf(linha, "%f", &nota) == 1) {
             return nota;
         }
