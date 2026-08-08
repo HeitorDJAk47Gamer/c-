@@ -14,6 +14,14 @@ float ler_nota(int num) {
             printf("\n\033[1;31mErro na leitura. Saindo...\033[0m\n");
             exit(1);
         }
+
+        // Trocar vírgula por ponto para suportar decimais localizados (ex: 7,5)
+        for (int i = 0; linha[i] != '\0'; i++) {
+            if (linha[i] == ',') {
+                linha[i] = '.';
+            }
+        }
+
         if (sscanf(linha, "%f", &nota) == 1) {
             return nota;
         }
