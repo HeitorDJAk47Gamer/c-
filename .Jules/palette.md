@@ -5,3 +5,7 @@
 ## 2024-05-18 - Robust CLI Input Validation
 **Learning:** Using scanf directly in CLI applications can lead to poor user experience, as invalid inputs cause immediate crashes. A robust approach using fgets and sscanf allows for graceful error handling and reprompting, making the CLI much more forgiving and accessible.
 **Action:** Always prefer fgets paired with sscanf for reading user input in C/C++ CLI tools, ensuring EOF conditions are handled gracefully to prevent hangs, and providing clear, localized error messages on invalid input.
+
+## 2024-05-19 - Graceful Localized Decimal Handling
+**Learning:** Users in certain locales naturally input commas as decimal separators. Failing to intercept and translate these commas before parsing floating-point numbers leads to unexpected truncation and a poor user experience.
+**Action:** When parsing floating-point input in localized C++ CLI applications, always intercept and replace commas with dots before calling functions like sscanf to ensure accurate parsing.
