@@ -14,6 +14,14 @@ float ler_nota(int num) {
             printf("\n\033[1;31mErro na leitura. Saindo...\033[0m\n");
             exit(1);
         }
+
+        // Replace commas with dots to handle localized decimal input
+        for (int i = 0; linha[i] != '\0'; i++) {
+            if (linha[i] == ',') {
+                linha[i] = '.';
+            }
+        }
+
         if (sscanf(linha, "%f", &nota) == 1) {
             return nota;
         }
